@@ -10,6 +10,9 @@ int check_cycle(listint_t *list)
 {
 	listint_t *slow, *fast;
 
+	fast = (void *)list;
+	slow = (void *)list;
+
 	if (list == NULL)
 		return (0);
 	if (list->next == NULL)
