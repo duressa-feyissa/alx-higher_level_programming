@@ -8,7 +8,7 @@ def uppercase(str):
     Returns:
         Void
     """
-    str = str + "\n"
+    str = str + '\n'
     for x in str:
         if ord(x) >= 97 and ord(x) < 123:
             num = ord(x) - 32
