@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+def uppercase(str):
+    """ A function that prints a string in uppercase
+
+    Args:
+        str: string
+
+    Returns:
+        Void
+    """
+    for x in str:
+        if ord(x) >= 97 and ord(x) < 123:
+            num = ord(x) - 32
+        else:
+            num = ord(x)
+        print("{0:c}".format(num), end="")
+    print("")
