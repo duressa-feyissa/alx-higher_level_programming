@@ -14,4 +14,4 @@ def uppercase(str):
         else:
             num = ord(x)
         print("{0:c}".format(num), end="")
-    print("")
+    print("".format())
