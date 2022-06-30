@@ -13,13 +13,13 @@ if __name__ == '__main__':
     b = int(argv[3])
 
     if op == '+':
-        print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a + b))
+        print("{0:d} + {1:d} = {2:d}".format(a, b, a + b))
     elif op == '-':
-        print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a - b))
+        print("{0:d} - {1:d} = {2:d}".format(a, b, a - b))
     elif op == '*':
-        print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a * b))
+        print("{0:d} * {1:d} = {2:d}".format(a, b, a * b))
     elif op == '/':
-        print("{0:d} {1:s} {2:d} = {3}".format(a, op, b, a / b))
+        print("{0:d} / {1:d} = {2}".format(a, b, a / b))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
