@@ -12,16 +12,14 @@ if __name__ == '__main__':
     op = argv[2]
     b = int(argv[3])
 
-    check = ['+', '-', '*', '/']
-    if op not in check:
-        print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
-
     if op == '+':
         print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a + b))
-    if op == '-':
+    elif op == '-':
         print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a - b))
-    if op == '*':
+    elif op == '*':
         print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a * b))
-    if op == '/':
+    elif op == '/':
         print("{0:d} {1:s} {2:d} = {3:d}".format(a, op, b, a / b))
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
