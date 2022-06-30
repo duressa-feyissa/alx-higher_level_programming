@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print("{0:s}".format(string.ascii_uppercase))
+x = list(range(1, 10))
+print(x)
