@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-x = list(map(chr, range(65, 91)))
-print(*x, sep="")
+import string
+print("{}".format(string.ascii_uppercase))
