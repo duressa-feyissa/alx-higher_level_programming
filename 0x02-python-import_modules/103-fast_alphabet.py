@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 import string
-print("{}".format(string.ascii_uppercase))
+print("{0:s}".format(string.ascii_uppercase))
