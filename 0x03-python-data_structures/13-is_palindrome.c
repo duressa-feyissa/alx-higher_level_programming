@@ -13,10 +13,9 @@ int is_palindrome(listint_t **head)
 	listint_t *current;
 
 	current = *head;
-	if (current == NULL)
+	if (current == NULL || current->next == NULL)
 		return (1);
-
-	if (current->next == NULL)
+	if (current->next->next == NULL)
 		return (1);
 	count = 0;
 	while (current)
