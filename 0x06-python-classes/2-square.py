@@ -5,7 +5,7 @@
 class Square:
     """ This is an empty class. """
     def __init__(self, size=0):
-        if  isinstance(size, int):
+        if isinstance(size, int):
             if size >= 0:
                 self.__size = size
             else:
