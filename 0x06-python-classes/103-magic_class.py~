@@ -5,17 +5,17 @@ import math
 class MagicClass:
     """ This is an empty class. """
 
-    """ Init module """
+
     def __init__(self, radius):
         self.__radius = 0
         if type(radius) is not int or type(radius) is not float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
-    """Area module """
+
     def area(self):
         return self.__radius ** 2 * math.pi
 
-    """ Circmumference module """
+
     def circumference(self):
         return 2 * math.pi * self.__radius
