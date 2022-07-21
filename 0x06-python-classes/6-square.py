@@ -1,21 +1,15 @@
 #!/usr/bin/python3
-""" Module contains empty class Square """
-
-
 class Square:
-    """ This is an empty class. """
     def __init__(self, size=0, position=(0, 0)):
         if isinstance(size, int):
-            if size >= 0:
-                self.__size = size
-            else:
+            if size < 0:
                 raise ValueError("size must be >= 0")
+            else:
+                self.__size = size
         else:
             raise TypeError("size must be an integer")
+        self.__position = position
 
-        if isinstance(position, tuple) and len(position) == 2:
-            if isinstance(position[0], int) and isinstance(position[1], int):
-                self.__position = position
     @property
     def size(self):
         return self.__size
@@ -24,9 +18,8 @@ class Square:
     def size(self, value):
         if isinstance(value, int):
             if value >= 0:
-                self.__size = value
-            else:
                 raise ValueError("size must be >= 0")
+            self.__size = value
         else:
             raise TypeError("size must be an integer")
 
@@ -40,7 +33,7 @@ class Square:
             if isinstance(value[0], int) and isinstance(value[1], int):
                 self.__position = value
             else:
-              pass
+                pass
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
 
