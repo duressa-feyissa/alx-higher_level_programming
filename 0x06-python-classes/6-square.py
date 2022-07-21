@@ -3,12 +3,13 @@
 
 
 class Square:
+    """ This is an empty class. """
     def __init__(self, size=0, position=(0, 0)):
         if isinstance(size, int):
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            else:
+            if size >= 0:
                 self.__size = size
+            else:
+                raise ValueError("size must be >= 0")
         else:
             raise TypeError("size must be an integer")
         self.__position = position
@@ -21,8 +22,9 @@ class Square:
     def size(self, value):
         if isinstance(value, int):
             if value >= 0:
+                self.__size = value
+            else:
                 raise ValueError("size must be >= 0")
-            self.__size = value
         else:
             raise TypeError("size must be an integer")
 
