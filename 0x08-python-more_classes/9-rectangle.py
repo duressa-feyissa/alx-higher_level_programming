@@ -82,8 +82,9 @@ class Rectangle:
 {eval(repr(self.__height))})"
 
     def __del__(self):
+        if Rectangle.number_of_instances > 0:
+            Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -110,4 +111,4 @@ class Rectangle:
         Returns:
             Rectangle: The new Rectangle with equal width and height.
         '''
-        return Rectangle(size, size)
+        return cls(size, size)
