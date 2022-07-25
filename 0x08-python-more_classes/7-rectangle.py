@@ -3,7 +3,11 @@
 
 
 class Rectangle:
-    """ empty class """
+    """ class """
+
+    number_of_instances = 0
+
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """ initilaizier """
@@ -21,6 +25,8 @@ class Rectangle:
         if width < 0:
             raise ValueError("width must be >= 0")
         self.__width = width
+
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -66,11 +72,15 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return string
         for i in range(self.__height):
-            string += '#' * self.__width
+            string += str(self.print_symbol) * self.__width
             if i != self.__height - 1:
-                string += "\n"
+                string += '\n'
         return string
 
     def __repr__(self):
         return f"Rectangle({eval(repr(self.__width))}, \
 {eval(repr(self.__height))})"
+
+    def __del__(self):
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1

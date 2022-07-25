@@ -7,6 +7,8 @@ class Rectangle:
 
     number_of_instances = 0
 
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """ initilaizier """
 
@@ -70,9 +72,9 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return string
         for i in range(self.__height):
-            string += '#' * self.__width
+            string += self.print_symbol * self.__width
             if i != self.__height - 1:
-                string += "\n"
+                string += '\n'
         return string
 
     def __repr__(self):
@@ -81,4 +83,4 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        self.number_of_instances -= 1
+        type(self).number_of_instances -= 1
