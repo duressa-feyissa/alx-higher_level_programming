@@ -21,4 +21,3 @@ def add_integer(a, b=98):
         b = int(b)
 
     return a + b
-
