@@ -57,12 +57,13 @@ Add Zero with numbers
 -5
 
 >>> add_integer(10e-1000)
-99
+98
 
 >>> add_integer(1.5)
 99
 
 >>> add_integer(-1.5)
+97
 
 >>> add_integer(10e1000, 10)
 Traceback (most recent call last):
