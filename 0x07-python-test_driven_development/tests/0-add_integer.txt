@@ -1,0 +1,105 @@
+======================
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is a text file to test the 0-add_integer module.  First import
+``0-add_integer`` from the ``add_integer`` module:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Add Positive numbers
+>>> add_integer(4, 5)
+9
+>>> add_integer(14, 4)
+18
+
+Add Negative numbers
+>>> add_integer(-3, -6)
+-9
+
+>>> add_integer(-13, -6)
+-19
+
+Add Positive and Negative number with greater positive magnitude
+>>> add_integer(-5, 12)
+7
+
+Add Positive and Negative number with greater negative magnitude
+>>> add_integer(-5, 4)
+-1
+
+Add Zero with numbers
+>>> add_integer(-6, 0)
+-6
+>>> add_integer(7, 0)
+7
+>>> add_integer(0, 0)
+0
+>>> add_integer(-5, 0)
+-5
+
+>>> add_integer(1)
+99
+
+>>> add_integer(99999999999999, 1)
+100000000000000
+
+>>> add_integer(7, 0)
+7
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-5, 0)
+-5
+
+>>> add_integer(10e-1000)
+99
+
+>>> add_integer(1.5)
+99
+
+>>> add_integer(-1.5)
+
+>>> add_integer(10e1000, 10)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(1)
+99
+
+Add variable and number
+>>> add_integer(a, 0)
+Traceback (most recent call last):
+NameError: name 'a' is not defined
+
+Add string and number
+>>> add_integer('a', 4)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Add string and number
+>>> add_integer(4, 'e')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+Add string and number
+>>> add_integer('a', 'llll')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Add string and number
+>>> add_integer('a', 'llll')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer([1, 3, 4], 'llll')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(float("aa"))
+Traceback (most recent call last):
+ValueError: could not convert string to float: 'aa'
