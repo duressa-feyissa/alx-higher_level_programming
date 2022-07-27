@@ -1,19 +1,17 @@
 """
-    Unittest for max_integer([..])
+    unit test for 6-max_integer.py
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
+    def test_max(self):
+        self.assertAlmostEqual(max_integer([4, 5, 7]), 7)
+        self.assertAlmostEqual(max_integer([8, 234, 332, 33]), 332)
+        self.assertAlmostEqual(max_integer([-1, -2, -3]), -1)
+        self.assertAlmostEqual(max_integer([20000000022]), 20000000022)
+        self.assertAlmostEqual(max_integer([]), None)
 
-    def test_is_list(self):
-        self.assertRaises(TypeError, max_integer, [1, 'a', '3', '6'])
-        self.assertRaises(TypeError, max_integer, 3)
-        self.assertRaises(TypeError, max_integer, 7, 8)
-
-    def test_Max_int(self):
-        self.assertAlmostEqual(max_integer([1, 2, 5, 4]), 5)
-        self.assertAlmostEqual(max_integer([-20, -100, -1, -49]), -1)
-        self.assertAlmostEqual(max_integer([-20, 0, -1, 49, -100]), 49)
-        self.assertAlmostEqual(max_integer(), None)
+    def test_non_int(self):
+        self.assertRaises(TypeError, max_integer, True)
