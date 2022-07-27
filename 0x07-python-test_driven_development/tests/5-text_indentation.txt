@@ -1,0 +1,44 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("frfrfrf")
+frfrfrf
+
+>>> text_indentation("  frfr?frf  ")
+frfr?
+<BLANKLINE>
+frf
+
+>>> text_indentation("  frfr?frf.dsd:sd ")
+frfr?
+<BLANKLINE>
+frf.
+<BLANKLINE>
+dsd:
+<BLANKLINE>
+sd
+
+>>> text_indentation("  frfr?frf.dsd:sd.323?reererre ")
+frfr?
+<BLANKLINE>
+frf.
+<BLANKLINE>
+dsd:
+<BLANKLINE>
+sd.
+<BLANKLINE>
+323?
+<BLANKLINE>
+reererre
+
+>>> text_indentation(54545)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("434", "323")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
