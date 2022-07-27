@@ -13,7 +13,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 7, 8)
 
     def test_Max_int(self):
-        self.assertEqual(max_integer([1, 2, 5, 4]), 5)
-        self.assertEqual(max_integer([-20, -100, -1, -49]), -1)
-        self.assertEqual(max_integer([-20, 0, -1, 49, -100]), 49)
-        self.assertEqual(max_integer(), None)
+        self.assertAlmostEqual(max_integer([1, 2, 5, 4]), 5)
+        self.assertAlmostEqual(max_integer([-20, -100, -1, -49]), -1)
+        self.assertAlmostEqual(max_integer([-20, 0, -1, 49, -100]), 49)
+        self.assertAlmostEqual(max_integer(), None)
