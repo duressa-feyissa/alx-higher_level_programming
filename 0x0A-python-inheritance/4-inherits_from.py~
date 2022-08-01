@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+"""
+    4-inherits_from: inherits_from()
+"""
+
+
+def inherits_from(obj, a_class):
+    """
+        check for class inheritance.
+    """
+
+    return issubclass(type(obj), a_class)
