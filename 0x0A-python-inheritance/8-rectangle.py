@@ -29,7 +29,7 @@ class BaseGeometry():
 
 class Rectangle(BaseGeometry):
     """
-    class Rectangle
+    class Rectangle inerits from BaseGeometry
     """
 
     def __init__(self, width, height):
