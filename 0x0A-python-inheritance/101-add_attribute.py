@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""
+101-add_attribute.py
+"""
+
+
+def add_attribute(*args):
+    """
+    adds a new attribute if possible.
+    """
+    if hasattr(args[0], "__dict__") is False:
+        raise TypeError("can't add new attribute")
+    setattr(args[0], args[1], args[2])
