@@ -8,7 +8,8 @@ class MyInt(int):
     """
     class MyInt inerits from int
     """
-"""
+
+    """
     MyInt that inherits from int
     """
 
@@ -18,14 +19,12 @@ class MyInt(int):
 
     def __eq__(self, other):
         """
-        Return:
-           True if both not equal
+        return: True if both not equal
         """
         return self.num != other
 
     def __ne__(self, other):
         """
-        Return:
-           True if both equal
+        Return: True if both equal
         """
         return self.num == other
