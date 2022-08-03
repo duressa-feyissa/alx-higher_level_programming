@@ -9,4 +9,4 @@ def read_file(filename=""):
     read file my_file_0.txt
     """
     with open("my_file_0.txt") as file:
-        print(file.read())
+        print("{}".format(file.read()), end="")
