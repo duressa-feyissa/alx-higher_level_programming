@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+""" Student class
+"""
+
+
+class Student():
+    """class
+    """
+
+    def __init__(self, first_name, last_name, age):
+        """initialization
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def to_json(self):
+        """  retrieves a dictionary
+        """
+        if isinstance(attrs, list):
+            new = dict()
+            if "first_name" in attrs:
+                new["first_name"] = self.first_name
+            if "last_name" in attrs:
+                new["last_name"] = self.last_name
+            if "age" in attrs:
+                new["age"] = self.age
+            return new
+        return self.__dict__
