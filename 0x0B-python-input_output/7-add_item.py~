@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+from sys import argv
+from os.path import exists
+
+
+argc = len(argv)
+if True:
+    new = []
+    for i in range(argc):
+        if i != 0:
+            new.append(argv[i])
+    if exists("add_item.json"):
+        hold = load_from_json_file("add_item.json")
+        hold.append(new)
+        save_to_json_file(hold, "add_item.json")
+    else:
+        save_to_json_file(new, "add_item.json")
