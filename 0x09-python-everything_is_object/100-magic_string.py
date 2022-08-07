@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""
-100-magic_string.py
-"""
 
 
 def magic_string():
