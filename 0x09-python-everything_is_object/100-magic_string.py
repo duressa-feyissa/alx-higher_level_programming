@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""100-magic_string.py
+"""
+100-magic_string.py
 """
 
 
 def magic_string():
-    """ returns a string “BestSchool” n times the number of the iteration
+    """
+    returns a string “BestSchool” n times the number of the iteration
     """
     try:
         magic_string.counter += 1
