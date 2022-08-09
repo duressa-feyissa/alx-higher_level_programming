@@ -16,33 +16,29 @@ class Rectangle(Base):
             y (int): The y coordinate of the new Rectangle.
             id (int): The identity of the new Rectangle.
         Raises:
-            TypeError: If either of width or height is not an int.
-            ValueError: If either of width or height <= 0.
-            TypeError: If either of x or y is not an int.
-            ValueError: If either of x or y < 0.
+            TypeError: chaeck type.
+            ValueError: Check value
         """
 
-        # Validate variables
-
-        # Validate width
+        # Validate variable  width
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
 
-        # validate height
+        # validate variable height
         if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
 
-        # validate x
+        # validate variable x
         if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
 
-        # validate y
+        # validate varaible y
         if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -56,14 +52,14 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """width getter function
+        """width getter
         """
 
         return self.__width
 
     @width.setter
     def width(self, width):
-        """Sets the width attribute
+        """width setter
         """
 
         if type(width) != int:
@@ -74,14 +70,14 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """height getter function
+        """height getter
         """
 
         return self.__height
 
     @height.setter
     def height(self, height):
-        """Sets the height attribute
+        """height setter
         """
 
         if type(height) != int:
@@ -92,14 +88,14 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x getter function
+        """x getter
         """
 
         return self.__x
 
     @x.setter
     def x(self, x):
-        """Sets the x attribute
+        """x setter
         """
 
         if type(x) != int:
@@ -110,14 +106,14 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """y getter function
+        """y getter
         """
 
         return self.__y
 
     @y.setter
     def y(self, y):
-        """Sets the x attribute
+        """y setter
         """
 
         if type(y) != int:
@@ -127,8 +123,8 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """Returns the area of the current
-        rectangle"""
+        """Returns the area of the current rectangle
+        """
 
         return self.__width * self.__height
 
@@ -161,58 +157,47 @@ class Rectangle(Base):
         """Update the Rectangle.
          Args:
              *args (ints): New attribute values.
-                 - 1st argument represents id attribute
-                 - 2nd argument represents width attribute
-                 - 3rd argument represent height attribute
-                 - 4th argument represents x attribute
-                 - 5th argument represents y attribute
              **kwargs (dict): New key/value pairs of attributes.
         """
 
-        new_args = [self.id, self.__width, self.__height, self.__x, self.__y]
+        new = [self.id, self.__width, self.__height, self.__x, self.__y]
         if len(args) == 0 or args is None:
             if len(kwargs) == 0:
                 return
             else:
                 try:
-                    new_args[0] = kwargs['id']
+                    new[0] = kwargs['id']
                 except KeyError:
                     pass
                 try:
-                    new_args[1] = kwargs['width']
+                    new[1] = kwargs['width']
                 except KeyError:
                     pass
                 try:
-                    new_args[2] = kwargs['height']
+                    new[2] = kwargs['height']
                 except KeyError:
                     pass
                 try:
-                    new_args[3] = kwargs['x']
+                    new[3] = kwargs['x']
                 except KeyError:
                     pass
                 try:
-                    new_args[4] = kwargs['y']
+                    new[4] = kwargs['y']
                 except KeyError:
                     pass
         else:
             for x in range(len(args)):
-                if x < len(new_args):
+                if x < len(new):
                     new_args[x] = args[x]
-        self.__init__(new_args[1],
-                      new_args[2],
-                      new_args[3],
-                      new_args[4],
-                      new_args[0])
+        self.__init__(new[1], new[2], new[3], new[4], new[0])
 
     def to_dictionary(self):
-        """Returns a dictionary representation of the the
-        object"""
-
-        obj_dic = {
-            "id": self.id,
-            "width": self.width,
-            "height": self.height,
-            "x": self.x,
-            "y": self.y
-        }
-        return obj_dic
+        """the dictionary repr of a rect
+        """
+        new = dict()
+        new['id'] = self.id
+        new['width'] = self.width
+        new['height'] = self.height
+        new['x'] = self.x
+        new['y'] = self.y
+        return new
