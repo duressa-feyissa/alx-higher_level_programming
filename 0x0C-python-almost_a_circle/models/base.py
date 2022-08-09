@@ -44,8 +44,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Write objects to a file.
+       `
         Args:
-            list_objs (list): A list
+            list_objs (list): A list of dictionaries.
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
