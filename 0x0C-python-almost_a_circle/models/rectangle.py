@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# rectangle.py
 """Defines a rectangle class."""
 from models.base import Base
 
@@ -7,25 +8,41 @@ class Rectangle(Base):
     """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        Initialize a new Rectangle.
+        """Initialize a new Rectangle.
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+            x (int): The x coordinate of the new Rectangle.
+            y (int): The y coordinate of the new Rectangle.
+            id (int): The identity of the new Rectangle.
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
         """
 
+        # Validate variables
+
+        # Validate width
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
 
+        # validate height
         if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
 
+        # validate x
         if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
             raise ValueError("x must be >= 0")
 
+        # validate y
         if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -41,12 +58,14 @@ class Rectangle(Base):
     def width(self):
         """width getter function
         """
+
         return self.__width
 
     @width.setter
     def width(self, width):
         """Sets the width attribute
         """
+
         if type(width) != int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -57,12 +76,14 @@ class Rectangle(Base):
     def height(self):
         """height getter function
         """
+
         return self.__height
 
     @height.setter
     def height(self, height):
         """Sets the height attribute
         """
+
         if type(height) != int:
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -73,12 +94,14 @@ class Rectangle(Base):
     def x(self):
         """x getter function
         """
+
         return self.__x
 
     @x.setter
     def x(self, x):
         """Sets the x attribute
         """
+
         if type(x) != int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -89,12 +112,14 @@ class Rectangle(Base):
     def y(self):
         """y getter function
         """
+
         return self.__y
 
     @y.setter
     def y(self, y):
         """Sets the x attribute
         """
+
         if type(y) != int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -102,13 +127,15 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        """Returns the area of the current rectangle
-        """
+        """Returns the area of the current
+        rectangle"""
+
         return self.__width * self.__height
 
     def display(self):
         """prints the rectangle
         """
+
         if self.__width == 0 or self.__height == 0:
             print()
             return
@@ -123,6 +150,7 @@ class Rectangle(Base):
     def __str__(self):
         """string representaaion of the class
         """
+
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.__x,
                                                        self.__y,
@@ -131,6 +159,14 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Update the Rectangle.
+         Args:
+             *args (ints): New attribute values.
+                 - 1st argument represents id attribute
+                 - 2nd argument represents width attribute
+                 - 3rd argument represent height attribute
+                 - 4th argument represents x attribute
+                 - 5th argument represents y attribute
+             **kwargs (dict): New key/value pairs of attributes.
         """
 
         new_args = [self.id, self.__width, self.__height, self.__x, self.__y]
@@ -171,10 +207,12 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Returns a dictionary representation of the the
         object"""
-        new = dict()
-        new['x'] = getattr(self, "x")
-        new['y'] = getattr(self, "y")
-        new['id'] = getattr(self, "id")
-        new['height'] = getattr(self, "height")
-        new['width'] = getattr(self, "width")
-        return new
+
+        obj_dic = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return obj_dic
