@@ -36,7 +36,7 @@ class Base:
         Args:
             list_dictionaries (list): A list of dictionaries.
         """
-        if len(list_dictionaries) == 0 or list_dictionaries is None:
+        if list_dictionaries == [] or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -53,7 +53,7 @@ class Base:
                 jsonfile.write("[]")
             else:
                 hold = [i.to_dictionary() for i in list_objs]
-                jsonfile.write(Base.to_json_string(new))
+                jsonfile.write(Base.to_json_string(hold))
 
     @staticmethod
     def from_json_string(json_string):
