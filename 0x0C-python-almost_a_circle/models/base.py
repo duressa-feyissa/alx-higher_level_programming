@@ -17,8 +17,9 @@ class Base:
         """
         Initializes the class attributes.
         """
+
         if id is not None:
-            self.id =id
+            self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -27,8 +28,10 @@ class Base:
     def to_json_string(list_dictionaries):
         """
         returns JSON string repr of list_dictionaries
+        Args:
+            list_dictionaries (list): A list of dictionaries.
         """
         if len(list_dictionaries) == 0:
-            return []
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
