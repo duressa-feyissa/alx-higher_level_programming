@@ -36,7 +36,7 @@ class Base:
         Args:
             list_dictionaries (list): A list of dictionaries.
         """
-        if len(list_dictionaries) or list_dictionaries is None:
+        if len(list_dictionaries) == 0 or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -93,4 +93,3 @@ class Base:
                 return [cls.create(**d) for d in objs]
         except IOError:
             return []
-
