@@ -25,21 +25,21 @@ class Rectangle(Base):
 
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
-	else:
+        else:
             if height <= 0:
                 raise ValueError("height must be > 0")
             self.__height = height
 
         if not isinstance(x, int):
             raise TypeError("x must be an integer")
-	else:
+        else:
             if x < 0:
                 raise ValueError("x must be > 0")
             self.__x = x
 
         if not isinstance(y, int):
             raise TypeError("y must be an integer")
-	else:
+        else:
             if y < 0:
                 raise ValueError("y must be > 0")
             self.__y = y
@@ -58,16 +58,16 @@ class Rectangle(Base):
             """
             if not isinstance(value, int):
                 raise TypeError("width must be an integer")
-	    else:
+            else:
                 if value <= 0:
                     raise ValueError("width must be > 0")
                 self.__width = value
 
         @property
+        def height(self):
             """
             getter function
             """
-        def height(self):
             return self.__height
 
         @height.setter
@@ -77,7 +77,7 @@ class Rectangle(Base):
             """
             if not isinstance(value, int):
                 raise TypeError("height must be an integer")
-	    else:
+            else:
                 if value <= 0:
                     raise ValueError("height must be > 0")
                 self.__height = value
@@ -96,7 +96,7 @@ class Rectangle(Base):
             """
             if not isinstance(value, int):
                 raise TypeError("x must be an integer")
-	    else:
+            else:
                 if value < 0:
                     raise ValueError("x must be > 0")
                 self.__x = value
@@ -115,7 +115,7 @@ class Rectangle(Base):
             """
             if not isinstance(value, int):
                 raise TypeError("y must be an integer")
-	    else:
+            else:
                 if value < 0:
                     raise ValueError("y must be > 0")
                 self.__y = value
@@ -134,7 +134,7 @@ class Rectangle(Base):
             for i in range(self.__height):
                 if self.__x == 0:
                     print("#" * (self.__width - 1))
-	        else:
+                else:
                     print(" " * (self.__x - 1), "#" * (self.__width - 1))
 
 
@@ -155,17 +155,17 @@ class Rectangle(Base):
                 for i in range(len(args)):
                     if i == 0:
                         self.id = args[i]
-	            elif i == 1:
+                    elif i == 1:
                         self.width = args[i]
-		    elif i == 2:
+                    elif i == 2:
                         self.height = args[i]
-		    elif i == 3:
+                    elif i == 3:
                         self.x = args[i]
-		    elif i == 4:
+                    elif i == 4:
                         self.y = args[i]
-	            else:
-			raise IndexError()
-		else:
+                    else:
+                        raise IndexError()
+                else:
                     for i in kwargs.keys():
                         if i == "id":
                             self.id = kwargs[i]
