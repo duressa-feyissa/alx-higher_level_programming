@@ -45,7 +45,7 @@ class Square(Rectangle):
              *args (ints): New attribute values.
              **kwargs (dict): New key/value pairs of attributes.
         """
-        new = [self.id, self.__width, self.__height, self.__x, self.__y]
+        new = [self.id, self.__width, self.__x, self.__y]
         if len(args) == 0 or args is None:
             if len(kwargs) == 0:
                 return
@@ -55,26 +55,22 @@ class Square(Rectangle):
                 except KeyError:
                     pass
                 try:
-                    new[1] = kwargs['width']
+                    new[1] = kwargs['size']
                 except KeyError:
                     pass
                 try:
-                    new[2] = kwargs['height']
+                    new[2] = kwargs['x']
                 except KeyError:
                     pass
                 try:
-                    new[3] = kwargs['x']
-                except KeyError:
-                    pass
-                try:
-                    new[4] = kwargs['y']
+                    new[3] = kwargs['y']
                 except KeyError:
                     pass
         else:
             for x in range(len(args)):
                 if x < len(new):
                     new[x] = args[x]
-        self.__init__(new[1], new[2], new[3], new[4], new[0])
+        self.__init__(new[1], new[2], new[3], new[0])
 
     def to_dictionary(self):
         """the dictionary repr of a rect
