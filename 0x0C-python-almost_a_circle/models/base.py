@@ -30,8 +30,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """
-        returns JSON string repr of list_dictionaries
+        """returns JSON string repr of list_dictionaries
 
         Args:
             list_dictionaries (list): A list of dictionaries.
@@ -39,7 +38,6 @@ class Base:
         if list_dictionaries == [] or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
-
 
     @classmethod
     def save_to_file(cls, list_objs):
