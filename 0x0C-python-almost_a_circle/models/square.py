@@ -45,40 +45,43 @@ class Square(Rectangle):
              *args (ints): New attribute values.
              **kwargs (dict): New key/value pairs of attributes.
         """
-        if len(args) != 0:
-            for i in range(len(args)):
-                if i == 0:
-                    self.id = args[i]
-                elif i == 1:
-                    self.width = args[i]
-                elif i == 2:
-                    self.height = args[i]
-                elif i == 3:
-                    self.x = args[i]
-                elif i == 4:
-                    self.y = args[i]
-                else:
-                    raise IndexError()
+        new = [self.id, self.__width, self.__height, self.__x, self.__y]
+        if len(args) == 0 or args is None:
+            if len(kwargs) == 0:
+                return
             else:
-                for i in kwargs.keys():
-                    if i == "id":
-                        self.id = kwargs[i]
-                    if i == "width":
-                        self.width = kwargs[i]
-                    if i == "height":
-                        self.height = kwargs[i]
-                    if i == "x":
-                        self.x = kwargs[i]
-                    if i == "y":
-                        self.y = kwargs[i]
+                try:
+                    new[0] = kwargs['id']
+                except KeyError:
+                    pass
+                try:
+                    new[1] = kwargs['width']
+                except KeyError:
+                    pass
+                try:
+                    new[2] = kwargs['height']
+                except KeyError:
+                    pass
+                try:
+                    new[3] = kwargs['x']
+                except KeyError:
+                    pass
+                try:
+                    new[4] = kwargs['y']
+                except KeyError:
+                    pass
+        else:
+            for x in range(len(args)):
+                if x < len(new):
+                    new[x] = args[x]
+        self.__init__(new[1], new[2], new[3], new[4], new[0])
 
     def to_dictionary(self):
         """the dictionary repr of a rect
         """
         new = dict()
         new['id'] = self.id
-        new['width'] = self.width
-        new['height'] = self.height
+        new['size'] = self.size
         new['x'] = self.x
         new['y'] = self.y
         return new
