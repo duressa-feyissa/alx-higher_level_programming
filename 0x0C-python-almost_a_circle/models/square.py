@@ -45,7 +45,8 @@ class Square(Rectangle):
              *args (ints): New attribute values.
              **kwargs (dict): New key/value pairs of attributes.
         """
-        new = [self.id, self.__width, self.__x, self.__y]
+        new = [self.id, self._Rectangle__width, self._Rectangle__x,
+               self._Rectangle__y]]
         if len(args) == 0 or args is None:
             if len(kwargs) == 0:
                 return
