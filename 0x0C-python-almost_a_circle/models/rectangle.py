@@ -188,7 +188,7 @@ class Rectangle(Base):
         else:
             for x in range(len(args)):
                 if x < len(new):
-                    new_args[x] = args[x]
+                    new[x] = args[x]
         self.__init__(new[1], new[2], new[3], new[4], new[0])
 
     def to_dictionary(self):
