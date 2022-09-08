@@ -1,0 +1,7 @@
+-- A database this table dump
+
+SELECT state, MAX(value) from temperatures
+GROUP BY state
+HAVING MAX(value)
+ORDER BY state
+LIMIT 3;
