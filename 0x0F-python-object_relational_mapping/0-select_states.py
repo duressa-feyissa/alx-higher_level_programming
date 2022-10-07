@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+''' script lists all states from the db'''
+
 import MySQLdb
 from sys import argv
 
@@ -9,7 +11,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host=host, user=argv[1], passwd=argv[2],
                          db=argv[3], port=port)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id;")
+    cur.execute("SELECT * FROM states ORDER BY id ACS;")
     m = cursor.fetchall()
     cur.close()
     db.close()
