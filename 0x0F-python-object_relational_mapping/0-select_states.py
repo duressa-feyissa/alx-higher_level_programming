@@ -11,8 +11,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host=host, user=argv[1], passwd=argv[2],
                          db=argv[3], port=port)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ACS;")
-    m = cursor.fetchall()
+    cur.execute("SELECT * FROM states ORDER BY id;")
+    m = cur.fetchall()
     cur.close()
     db.close()
     for i in m:
