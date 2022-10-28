@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Filter states by user input"""
 import MySQLdb
+from sys import argv
 
 
 def main():
@@ -32,6 +33,6 @@ def main():
     else:
         return
 
+
 if __name__ == "__main__":
-    from sys import argv
     main()
