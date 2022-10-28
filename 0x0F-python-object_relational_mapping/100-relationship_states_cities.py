@@ -22,7 +22,8 @@ if __name__ == "__main__":
 
     session = Session(engine)
     city = City(name='San Francisco')
-    state = State(name='California', cities=[city])
+    state = State(name='California')
+    state.cities.append(city)
 
     session.add(state)
     session.add(city)
