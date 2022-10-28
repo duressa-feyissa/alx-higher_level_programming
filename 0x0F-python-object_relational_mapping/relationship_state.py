@@ -22,4 +22,5 @@ class State(Base):
     # Describe table, column objects, use methods imported from sqlalchemy
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", cascade="all")
+    cities = relationship('City', cascade='save-update, merge, delete',
+                          backref='state')
