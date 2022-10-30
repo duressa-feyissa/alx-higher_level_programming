@@ -1,6 +1,10 @@
 #!/usr/bin/python3
+"""
+    Script to check status
+"""
 import requests
 from sys import argv
+
 
 if __name__ = "__main__":
     response = requests.get("https://alx-intranet.hbtn.io/status")
