@@ -6,7 +6,7 @@
 
 if __name__ == '__main__':
     import requests
-    sys import srgv
+    from sys import srgv
 
     value = {'email': argv[2]}
     res = requests.post(argv[1], data=value)
