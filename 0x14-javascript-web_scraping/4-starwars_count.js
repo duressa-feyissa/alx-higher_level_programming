@@ -8,7 +8,7 @@ request(url, function (err, res, body) {
   if (err) {
     console.log(err);
   } else if (res.statusCode === 200) {
-    let films = JSON.parse(body).results;
+    const films = JSON.parse(body).results;
     let count = 0;
     for (let i = 0; i < films.length; i++) {
       for (let j = 0; j < films[i].characters.length; j++) {
